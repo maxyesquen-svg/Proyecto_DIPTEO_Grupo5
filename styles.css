@@ -1,0 +1,656 @@
+/* =================================================== 
+   HOJA DE ESTILOS: PORTAL DE SEGURIDAD CIUDADANA
+   =================================================== */
+
+:root {
+    --bg-dark: #1e1e1e;
+    --bg-card: #2b2b2b;
+    --primary-red: #d60000;
+    --bright-red: #ff0000;
+    --text-light: #f1f1f1;
+    --text-muted: #aaaaaa;
+    --border-color: #444444;
+}
+
+body {
+    font-family: 'Roboto', 'Anton', sans-serif;
+    background: linear-gradient(135deg, #2b1f1f 0%, #121212 100%);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ===================================================
+   1. CABECERA Y MENU CON FLEXBOX
+   =================================================== */
+.main-header {
+    background: #111111;
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--primary-red);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 60px;
+    height: auto;
+}
+
+.portal-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.8em;
+    color: var(--primary-red);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu-contenedor {
+    position: relative;
+}
+
+.btn-nav {
+    background-color: var(--primary-red);
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-nav:hover {
+    background-color: var(--bright-red);
+    transform: translateY(-2px);
+}
+
+.cuadro-opciones {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #222222;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.7);
+    border-radius: 4px;
+    z-index: 100;
+}
+
+.menu-contenedor:hover .cuadro-opciones {
+    display: block;
+}
+
+.opcion-item {
+    color: var(--text-light);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9em;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.2s ease;
+}
+
+.opcion-item:hover {
+    background-color: var(--primary-red);
+}
+
+/* ===================================================
+   2. BREADCRUMBS (MIGAS DE PAN)
+   =================================================== */
+.breadcrumbs-container {
+    background-color: #1a1a1a;
+    padding: 10px 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+    font-size: 0.9em;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    color: var(--text-muted);
+    padding-right: 8px;
+}
+
+.breadcrumb-item a {
+    color: #ff6666;
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-muted);
+}
+
+/* ===================================================
+   3. LAYOUT GENERAL Y SECCIONES
+   =================================================== */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.4em;
+    color: #ffffff;
+    border-bottom: 3px solid var(--primary-red);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* ===================================================
+   4. PERFIL DE OPERADOR (FLEXBOX) & BARRA DE CARGA
+   =================================================== */
+.operator-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+.operator-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-red);
+    object-fit: cover;
+}
+
+.operator-info {
+    flex-grow: 1;
+}
+
+.operator-name {
+    margin: 0 0 5px 0;
+    font-size: 1.3em;
+}
+
+.operator-role, .operator-shift {
+    margin: 2px 0;
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+/* Barra de carga animada de patrullaje */
+.patrol-progress-container {
+    margin-top: 10px;
+}
+
+.patrol-progress-container label {
+    font-size: 0.85em;
+    color: #ff9999;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 70%;
+    background-color: var(--bright-red);
+    animation: patrolLoading 3s infinite alternate ease-in-out;
+}
+
+@keyframes patrolLoading {
+    0% { width: 30%; }
+    100% { width: 90%; }
+}
+
+.operator-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.status-badge.active {
+    background-color: #008800;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.btn-action {
+    background-color: var(--primary-red);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ===================================================
+   5. BOTONES TÁCTILES DE PÁNICO
+   =================================================== */
+.panic-section {
+    margin-bottom: 30px;
+}
+
+.panic-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-panic {
+    flex: 1;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-panic:hover {
+    transform: scale(1.03);
+}
+
+.alert-fire { background-color: #d9534f; }
+.alert-crime { background-color: #c9302c; }
+.alert-medical { background-color: #0275d8; }
+
+/* ===================================================
+   6. MONITOREO DE CÁMARAS (CSS GRID - 3 COLUMNAS)
+   =================================================== */
+.cameras-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.camera-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.camera-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(255, 0, 0, 0.3);
+}
+
+.camera-header {
+    background-color: #111;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.cam-status.online {
+    color: #00ff00;
+}
+
+/* Animación de Parpadeo de Alerta Roja (@keyframes) */
+
+.blink-alert {
+    color: #ffffff;
+    background-color: var(--bright-red);
+    padding: 2px 6px;
+    border-radius: 3px;
+    animation: blinkAnimation 1s infinite alternate;
+}
+
+@keyframes blinkAnimation {
+    from { opacity: 1; }
+    to { opacity: 0.3; }
+}
+
+.camera-screen {
+    background-color: #000;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 0.9em;
+}
+
+.alert-bg {
+    border: 2px solid var(--bright-red);
+}
+
+.camera-body {
+    padding: 15px;
+}
+
+.camera-body h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1em;
+}
+
+.camera-body p {
+    margin: 0;
+    font-size: 0.85em;
+    color: var(--text-muted);
+}
+
+/* Pseudo-clase :nth-child() */
+.cameras-grid .camera-card:nth-child(even) {
+    border-top: 3px solid var(--primary-red);
+}
+
+/*  7. SELECTORES AVANZADOS Y ACCESIBILIDAD*/
+
+/* Selector de atributo para enlaces externos que inician con https */
+
+a[href^="https"]::after {
+    content: " ↗";
+    font-size: 0.8em;
+}
+
+/* Selector de atributo para enlaces a archivos PDF */
+
+a[href$=".pdf"]::after {
+    content: " [PDF]";
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+.external-links {
+    list-style: square;
+    padding-left: 20px;
+}
+
+.external-links a {
+    color: #ff8888;
+    text-decoration: none;
+}
+
+.external-links a:hover {
+    text-decoration: underline;
+}
+
+/* Accesibilidad con :focus-visible */
+a:focus-visible, button:focus-visible {
+    outline: 3px solid #ffff00;
+    outline-offset: 2px;
+}
+
+/* 8. CENTRAL DE EMERGENCIAS Y PAGINACIÓN*/
+.phone-list {
+    background-color: var(--bg-card);
+    list-style: none;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-red);
+}
+
+.phone-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid #333;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 8px;
+}
+
+.page-link {
+    padding: 8px 14px;
+    background-color: var(--bg-card);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.page-item.active .page-link, .page-link:hover {
+    background-color: var(--primary-red);
+    border-color: var(--bright-red);
+}
+
+.page-item.disabled .page-link {
+    color: #666;
+    pointer-events: none;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: var(--text-muted);
+    font-size: 0.85em;
+    margin-top: 40px;
+}
+
+/* 9. MEDIA QUERIES */
+
+/* Tablet (576px ) */
+
+
+
+@media (max-width: 576px) {
+    .cameras-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en Tablet */
+    }
+
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .operator-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .operator-actions {
+        align-items: center;
+    }
+}
+
+/* Smartphone / Móvil (480px o menos) */
+
+
+
+@media (max-width: 480px) {
+    .cameras-grid {
+        grid-template-columns: 1fr; /* 1 columna en Smartphone */
+    }
+
+    .panic-grid {
+        flex-direction: column; /* Botones de pánico táctiles apilados */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-nav {
+        width: 100%;
+    }
+
+    .cuadro-opciones {
+        position: static;
+        width: 100%;
+    }
+}
+/* Navegacion entre paginas */
+
+.btn-nav{display:inline-block;text-decoration:none;text-align:center;box-sizing:border-box}
+.page-intro{background-color:var(--bg-card);border:1px solid var(--border-color);border-left:5px solid var(--primary-red);border-radius:8px;padding:20px;margin-bottom:30px;box-shadow:0 4px 10px rgba(0,0,0,.35)}
+.page-intro h2{margin-top:0}.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:30px}.info-card{background-color:var(--bg-card);border:1px solid var(--border-color);border-radius:8px;padding:20px;box-shadow:0 4px 10px rgba(0,0,0,.35)}.info-card h3{margin-top:0;color:#fff}.info-card p,.info-card li{color:var(--text-muted)}.btn-page{display:inline-block;background-color:var(--primary-red);color:#fff;text-decoration:none;padding:9px 15px;border-radius:4px;font-weight:bold;border:1px solid var(--primary-red);transition:background-color .2s ease,transform .2s ease}.btn-page:hover{background-color:var(--bright-red);transform:translateY(-2px)}.pagination .page-link{display:block}@media(max-width:768px){.info-grid{grid-template-columns:1fr 1fr}}@media(max-width:480px){.info-grid{grid-template-columns:1fr}}
+
+
+/* Mapa de la ruta de patrullaje */
+
+
+.patrol-map {
+    margin-top: 14px;
+    background: #111;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+}
+
+.patrol-map img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.map-caption {
+    margin: 0;
+    padding: 8px 12px;
+    background: #181818;
+    color: var(--text-muted);
+    font-size: 0.78em;
+    border-top: 1px solid #333;
+}
+
+
+@media (max-width: 768px) {
+    .patrol-map img {
+        height: 180px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .patrol-map img {
+        height: 150px;
+    }
+}
+
+
+/* Perfil del operador: avatar junto al nombre y acciones alineadas */
+.operator-card {
+    align-items: stretch;
+}
+
+.operator-info {
+    min-width: 0;
+}
+
+.operator-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.operator-avatar {
+    flex: 0 0 80px;
+}
+
+.operator-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-red);
+    object-fit: cover;
+    display: block;
+}
+
+.operator-details {
+    min-width: 0;
+}
+
+.operator-details .operator-name {
+    margin: 0 0 5px 0;
+}
+
+.operator-actions {
+    min-width: 150px;
+    justify-content: center;
+    align-items: stretch;
+    align-self: stretch;
+    padding-left: 20px;
+}
+
+.operator-actions .status-badge,
+.operator-actions .btn-action {
+    width: 150px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.operator-actions .btn-action {
+    margin: 0;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .operator-actions {
+        min-width: 0;
+        width: 100%;
+        padding-left: 0;
+    }
+
+
+
+    .operator-actions .status-badge,
+    .operator-actions .btn-action {
+        width: min(220px, 100%);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .operator-heading {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Seguridad Ciudadana | Security Breach</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head> 
+<body>
+
+  <!-- Cabecera Principal -->
+<header class="main-header">
+    <div class="logo-container">
+      <img src="security.png" alt="Logo Security Breach" class="logo-img">
+      <h1 class="portal-title">SECURITY BREACH</h1>
+    </div>
+
+    <!-- Navegación Principal -->
+    <nav class="nav-menu" aria-label="Navegación principal">
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="index.html">Inicio</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="#operador">Perfil de Operador</a>
+      <a class="opcion-item" href="#sectores">Monitoreo de Sectores</a>
+      <a class="opcion-item" href="https://www.gob.pe/pnp" target="_blank">PNP Oficial</a>
+    </div>
+    </details>
+  </div>
+
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="reportes.html">Reportes</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="index.html">Nuevo Reporte</a>
+      <a class="opcion-item" href="reportes.html#historial">Historial de Incidencias</a>
+      <a class="opcion-item" href="reporte_mensual.pdf">Descargar Reporte PDF</a>
+    </div>
+    </details>
+  </div>
+
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="camaras.html">Cámaras</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="camaras.html#camaras">Cámaras en Vivo</a>
+      <a class="opcion-item" href="camaras.html#riesgo">Zonas de Alto Riesgo</a>
+    </div>
+    </details>
+  </div>
+
+  <!-- AYUDA -->
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="ayuda.html">Ayuda</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="ayuda.html#soporte">Soporte Técnico</a>
+      <a class="opcion-item" href="https://www.gob.pe" target="_blank">Portal del Estado</a>
+    </div>
+    </details>
+  </div>
+
+  <!-- OPERADOR -->
+  <div class="menu-contenedor">
+    <details>
+      <summary class="btn-nav">Operador</summary>
+      <div class="cuadro-opciones">
+        <a class="opcion-item" href="sesion.html">Cerrar Sesión</a>
+      </div>
+    </details>
+  </div>
+    </nav>
+  </header>
+
+  <!-- Componente Breadcrumbs (Migas de Pan) -->
+  <nav class="breadcrumbs-container" aria-label="Migas de pan">
+    <ol class="breadcrumbs">
+      <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+      <li class="breadcrumb-item"><a href="#">Central de Monitoreo</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Panel de Control General</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+
+    <!-- Sección Perfil de Sereno/Operador (Layout Flexbox) -->
+    <section class="operador-section" id="operador">
+      <h2 class="section-title">PERFIL DEL OPERADOR DE TURNO</h2>
+      <article class="operator-card">
+        <div class="operator-info">
+          <div class="operator-heading">
+            <div class="operator-avatar">
+              <img src="avatar.png" alt="Foto de perfil del agente Max Yesquen Millones">
+            </div>
+            <div class="operator-details">
+              <h3 class="operator-name">AGENTE MAX YESQUEN MILLONES</h3>
+              <p class="operator-role">Sereno Operador - Central M-04</p>
+              <p class="operator-shift">Turno: <strong>Noche (18:00 - 06:00 hrs)</strong></p>
+            </div>
+          </div>
+          
+          <!-- Barra de carga de patrullaje activo -->
+          <div class="patrol-progress-container">
+            <label>Ruta de Patrullaje Sector 4:</label>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+            <div class="patrol-map">
+              <img src="ruta_sector4.png" alt="Mapa de la ruta de patrullaje del Sector 4">
+              <p class="map-caption">Ruta operativa del Sector 4 · Puntos de control y cámaras cercanas</p>
+            </div>
+          </div>
+        </div>
+        <div class="operator-actions">
+          <span class="status-badge active">En Línea</span>
+          <button class="btn-action">Cambiar Turno</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Botones Táctiles de Pánico (Visibles especialmente en SmartPhones / Móviles) -->
+    <section class="panic-section">
+      <h2 class="section-title">BOTONES TÁCTILES DE PÁNICO</h2>
+      <div class="panic-grid">
+        <button class="btn-panic alert-fire">🔥 Pánico Incendio</button>
+        <button class="btn-panic alert-crime">🚨 Pánico Asalto</button>
+        <button class="btn-panic alert-medical">🚑 Pánico Médico</button>
+      </div>
+    </section>
+
+    <!-- Sección de Cámaras y Sectores (Layout CSS Grid - 3 Columnas) -->
+    <section class="cameras-section" id="sectores">
+      <h2 class="section-title">MONITOREO DE CÁMARAS Y SECTORES</h2>
+      
+      <div class="cameras-grid">
+        
+        <!-- Tarjeta 1: Sector 1 -->
+        <article class="camera-card">
+          <div class="camera-header">
+            <span class="cam-id">CAM-01</span>
+            <span class="cam-status online">EN VIVO</span>
+          </div>
+          <div class="camera-screen">
+            <p>📹 Av. Los Olivos - Cuadra 3</p>
+          </div>
+          <div class="camera-body">
+            <h3>Sector 1: Comercial</h3>
+            <p>Estado: Patrullaje normal en curso.</p>
+          </div>
+        </article>
+
+        <!-- Tarjeta 2: Sector 2 (Alerta Activa con Parpadeo) -->
+        <article class="camera-card alert-active">
+          <div class="camera-header">
+            <span class="cam-id">CAM-02</span>
+            <span class="cam-status blink-alert">¡ALERTA ROJA!</span>
+          </div>
+          <div class="camera-screen alert-bg">
+            <p>⚠️ Av. Central - Sector 4</p>
+          </div>
+          <div class="camera-body">
+            <h3>Sector 2: Sospecha de Robo</h3>
+            <p>Vehículo sin placa reportado hace 5 min.</p>
+          </div>
+        </article>
+
+        <!-- Tarjeta 3: Sector 3 -->
+        <article class="camera-card">
+          <div class="camera-header">
+            <span class="cam-id">CAM-03</span>
+            <span class="cam-status online">EN VIVO</span>
+          </div>
+          <div class="camera-screen">
+            <p>📹 Parque Principal - Zona Norte</p>
+          </div>
+          <div class="camera-body">
+            <h3>Sector 3: Residencial</h3>
+            <p>Sin novedades. Aforo controlado.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Sección de Enlaces y Documentos (Para selectores de atributo) -->
+    <section class="links-section">
+      <h2 class="section-title">ENLACES DE INTERÉS Y DOCUMENTACIÓN</h2>
+      <ul class="external-links">
+        <li><a href="https://www.gob.pe/mininter" target="_blank">Ministerio del Interior (Portal Externo)</a></li>
+        <li><a href="https://www.pnp.gob.pe" target="_blank">Policía Nacional del Perú (Portal Externo)</a></li>
+        <li><a href="protocolo_seguridad.pdf">Descargar Protocolo de Emergencias (PDF)</a></li>
+      </ul>
+    </section>
+
+    <!-- Sección de Teléfonos de Emergencia -->
+    <section class="emergency-section">
+      <h2 class="section-title">CENTRAL DE EMERGENCIAS</h2>
+      <ul class="phone-list">
+        <li><strong>Policía Nacional:</strong> 105</li>
+        <li><strong>Serenazgo Comunitario:</strong> (01) 555-0199</li>
+        <li><strong>Bomberos:</strong> 116</li>
+        <li><strong>Ambulancia Médica:</strong> 106</li>
+      </ul>
+    </section>
+
+    <!-- Paginación -->
+    <nav class="pagination-container" aria-label="Navegación de páginas">
+      <ul class="pagination">
+        <li class="page-item disabled"><a class="page-link" href="index.html" aria-disabled="true">&laquo; Anterior</a></li>
+        <li class="page-item active"><a class="page-link" href="index.html" aria-current="page">1</a></li>
+        <li class="page-item"><a class="page-link" href="pagina2.html">2</a></li>
+        <li class="page-item"><a class="page-link" href="pagina3.html">3</a></li>
+        <li class="page-item"><a class="page-link" href="pagina2.html">Siguiente &raquo;</a></li>
+      </ul>
+    </nav>
+
+  </main>
+
+  <footer class="main-footer">
+    <p>© 2026 Sistema de Seguridad Ciudadana Security Breach - Laboratorio Grupal C24S-A: Yesquen - Vega - Huaman</p>
+  </footer>
+
+</body>
+</html>

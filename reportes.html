@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes | Security Breach</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Cabecera Principal -->
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="security.png" alt="Logo Security Breach" class="logo-img">
+      <h1 class="portal-title">SECURITY BREACH</h1>
+    </div>
+
+    <!-- Navegación Principal -->
+    <nav class="nav-menu" aria-label="Navegación principal">
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="index.html">Inicio</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="#operador">Perfil de Operador</a>
+      <a class="opcion-item" href="#sectores">Monitoreo de Sectores</a>
+      <a class="opcion-item" href="https://www.gob.pe/pnp" target="_blank">PNP Oficial</a>
+    </div>
+    </details>
+  </div>
+
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="reportes.html">Reportes</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="index.html">Nuevo Reporte</a>
+      <a class="opcion-item" href="reportes.html#historial">Historial de Incidencias</a>
+      <a class="opcion-item" href="reporte_mensual.pdf">Descargar Reporte PDF</a>
+    </div>
+    </details>
+  </div>
+
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="camaras.html">Cámaras</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="camaras.html#camaras">Cámaras en Vivo</a>
+      <a class="opcion-item" href="camaras.html#riesgo">Zonas de Alto Riesgo</a>
+    </div>
+    </details>
+  </div>
+
+  <!-- AYUDA -->
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="ayuda.html">Ayuda</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="ayuda.html#soporte">Soporte Técnico</a>
+      <a class="opcion-item" href="https://www.gob.pe" target="_blank">Portal del Estado</a>
+    </div>
+    </details>
+  </div>
+
+  <!-- OPERADOR -->
+  <div class="menu-contenedor">
+    <details>
+      <summary class="btn-nav">Operador</summary>
+      <div class="cuadro-opciones">
+        <a class="opcion-item" href="sesion.html">Cerrar Sesión</a>
+      </div>
+    </details>
+  </div>
+    </nav>
+  </header>
+
+  <!-- Migas de Pan -->
+  <nav class="breadcrumbs-container" aria-label="Migas de pan">
+    <ol class="breadcrumbs">
+      <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Reportes</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+
+    <section class="page-intro" id="nuevo">
+      <h2 class="section-title">GESTIÓN DE REPORTES</h2>
+      <p>Centraliza la creación y consulta de reportes de incidencias.</p>
+      <a class="btn-page" href="#historial">Ver historial</a>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card">
+        <h3>Nuevo Reporte</h3>
+        <p>Registra una nueva incidencia.</p>
+        <a class="btn-page" href="#formulario">Crear reporte</a>
+      </article>
+
+      <article class="info-card">
+        <h3>Incidencias</h3>
+        <p>Consulta los reportes registrados.</p>
+        <a class="btn-page" href="#historial">Consultar</a>
+      </article>
+
+      <article class="info-card">
+        <h3>Documento mensual</h3>
+        <p>Accede al reporte mensual.</p>
+        <a class="btn-page" href="reporte_mensual.pdf">Abrir PDF</a>
+      </article>
+    </section>
+
+    <section class="page-intro" id="formulario">
+      <h2 class="section-title">FORMULARIO DE INCIDENCIA</h2>
+      <p>Este apartado queda preparado para conectar posteriormente un formulario de registro.</p>
+      <ul class="external-links">
+        <li>Tipo de incidencia</li>
+        <li>Sector y ubicación</li>
+        <li>Fecha y hora</li>
+        <li>Descripción de los hechos</li>
+      </ul>
+    </section>
+
+    <section class="page-intro" id="historial">
+      <h2 class="section-title">HISTORIAL DE INCIDENCIAS</h2>
+      <ul class="phone-list">
+        <li><strong>INC-001:</strong> Sospecha de robo — Sector 4 — En seguimiento.</li>
+        <li><strong>INC-002:</strong> Patrullaje preventivo — Sector 1 — Cerrado.</li>
+        <li><strong>INC-003:</strong> Control de aforo — Sector 3 — Cerrado.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <p>© 2026 Sistema de Seguridad Ciudadana Security Breach - Laboratorio Grupal C24S-A: Yesquen - Vega - Huaman</p>
+  </footer>
+
+</body>
+</html>

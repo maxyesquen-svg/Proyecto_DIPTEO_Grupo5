@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cámaras | Security Breach</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Cabecera Principal -->
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="security.png" alt="Logo Security Breach" class="logo-img">
+      <h1 class="portal-title">SECURITY BREACH</h1>
+    </div>
+
+    <!-- Navegación Principal -->
+    <nav class="nav-menu" aria-label="Navegación principal">
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="index.html">Inicio</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="#operador">Perfil de Operador</a>
+      <a class="opcion-item" href="#sectores">Monitoreo de Sectores</a>
+      <a class="opcion-item" href="https://www.gob.pe/pnp" target="_blank">PNP Oficial</a>
+    </div>
+    </details>
+  </div>
+
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="reportes.html">Reportes</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="index.html">Nuevo Reporte</a>
+      <a class="opcion-item" href="reportes.html#historial">Historial de Incidencias</a>
+      <a class="opcion-item" href="reporte_mensual.pdf">Descargar Reporte PDF</a>
+    </div>
+    </details>
+  </div>
+
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="camaras.html">Cámaras</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="camaras.html#camaras">Cámaras en Vivo</a>
+      <a class="opcion-item" href="camaras.html#riesgo">Zonas de Alto Riesgo</a>
+    </div>
+    </details>
+  </div>
+
+  <!-- AYUDA -->
+  <div class="menu-contenedor">
+    <details>
+    <summary class="btn-nav" href="ayuda.html">Ayuda</summary>
+    <div class="cuadro-opciones">
+      <a class="opcion-item" href="ayuda.html#soporte">Soporte Técnico</a>
+      <a class="opcion-item" href="https://www.gob.pe" target="_blank">Portal del Estado</a>
+    </div>
+    </details>
+  </div>
+
+  <!-- OPERADOR -->
+  <div class="menu-contenedor">
+    <details>
+      <summary class="btn-nav">Operador</summary>
+      <div class="cuadro-opciones">
+        <a class="opcion-item" href="sesion.html">Cerrar Sesión</a>
+      </div>
+    </details>
+  </div>
+    </nav>
+  </header>
+
+  <!-- Migas de Pan -->
+  <nav class="breadcrumbs-container" aria-label="Migas de pan">
+    <ol class="breadcrumbs">
+      <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Cámaras</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+
+    <section class="page-intro" id="camaras">
+      <h2 class="section-title">CÁMARAS EN VIVO</h2>
+      <p>Panel independiente para consultar los sectores monitoreados.</p>
+    </section>
+
+    <div class="cameras-grid">
+
+      <!-- Tarjeta 1: Sector 1 -->
+      <article class="camera-card">
+        <div class="camera-header">
+          <span>CAM-01</span>
+          <span class="cam-status online">EN VIVO</span>
+        </div>
+        <div class="camera-screen">
+          <p>📹 Av. Los Olivos - Cuadra 3</p>
+        </div>
+        <div class="camera-body">
+          <h3>Sector 1: Comercial</h3>
+          <p>Estado: Patrullaje normal en curso.</p>
+        </div>
+      </article>
+
+      <!-- Tarjeta 2: Alerta activa con parpadeo -->
+      <article class="camera-card alert-active">
+        <div class="camera-header">
+          <span>CAM-02</span>
+          <span class="blink-alert">¡ALERTA ROJA!</span>
+        </div>
+        <div class="camera-screen alert-bg">
+          <p>⚠️ Av. Central - Sector 4</p>
+        </div>
+        <div class="camera-body">
+          <h3>Sector 2: Sospecha de Robo</h3>
+          <p>Vehículo sin placa reportado hace 5 min.</p>
+        </div>
+      </article>
+
+      <!-- Tarjeta 3: Sector 3 -->
+      <article class="camera-card">
+        <div class="camera-header">
+          <span>CAM-03</span>
+          <span class="cam-status online">EN VIVO</span>
+        </div>
+        <div class="camera-screen">
+          <p>📹 Parque Principal - Zona Norte</p>
+        </div>
+        <div class="camera-body">
+          <h3>Sector 3: Residencial</h3>
+          <p>Sin novedades. Aforo controlado.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <section class="page-intro" id="riesgo">
+      <h2 class="section-title">ZONAS DE ALTO RIESGO</h2>
+      <ul class="phone-list">
+        <li><strong>Sector 4:</strong> vigilancia reforzada por alerta activa.</li>
+        <li><strong>Sector 2:</strong> monitoreo preventivo.</li>
+        <li><strong>Sector 1:</strong> patrullaje normal.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <p>© 2026 Sistema de Seguridad Ciudadana Security Breach - Laboratorio Grupal C24S-A: Yesquen - Vega - Huaman</p>
+  </footer>
+
+</body>
+</html>
